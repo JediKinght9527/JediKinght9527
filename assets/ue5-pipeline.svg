@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="edge" x1="0" x2="1">
+      <stop offset="0" stop-color="#5b8def"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7c5cff"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="300" fill="none"/>
+
+  <!-- client -->
+  <rect x="18" y="96" width="150" height="96" rx="10" fill="#11151c" stroke="#2b3444"/>
+  <text x="93" y="126" fill="#e6edf3" font-size="14" text-anchor="middle">Claude Code</text>
+  <text x="93" y="146" fill="#7d8896" font-size="12" text-anchor="middle">/ Cursor</text>
+  <text x="93" y="170" fill="#5b8def" font-size="11" text-anchor="middle">MCP client</text>
+
+  <line x1="168" y1="144" x2="222" y2="144" stroke="url(#edge)" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- mcp server -->
+  <rect x="226" y="66" width="176" height="156" rx="10" fill="#141b26" stroke="#3d4a5f" stroke-width="1.5"/>
+  <text x="314" y="94" fill="#e6edf3" font-size="14" text-anchor="middle">mcp_server</text>
+  <text x="314" y="114" fill="#7d8896" font-size="11" text-anchor="middle">45 tools registered</text>
+  <g font-size="11" fill="#9aa7b6">
+    <text x="246" y="140">scene · pcg · blueprint</text>
+    <text x="246" y="158">docs · code · pie</text>
+    <text x="246" y="176">cine · light_rig</text>
+    <text x="246" y="194">tripo3d text&#8594;3D</text>
+  </g>
+  <text x="314" y="212" fill="#5b8def" font-size="11" text-anchor="middle">lazy-loaded registry</text>
+
+  <line x1="402" y1="144" x2="456" y2="144" stroke="url(#edge)" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- agent loop -->
+  <rect x="460" y="66" width="196" height="156" rx="10" fill="#141b26" stroke="#3d4a5f" stroke-width="1.5"/>
+  <text x="558" y="92" fill="#e6edf3" font-size="14" text-anchor="middle">agent loop</text>
+  <g font-size="11.5" fill="#cbd5e1">
+    <text x="480" y="122">1. plan</text>
+    <text x="480" y="146">2. call tool</text>
+    <text x="480" y="170">3. read state back</text>
+    <text x="480" y="194">4. verify or retry</text>
+  </g>
+  <text x="558" y="212" fill="#7c5cff" font-size="11" text-anchor="middle">no "assume it worked"</text>
+
+  <!-- transport split -->
+  <line x1="656" y1="144" x2="706" y2="106" stroke="url(#edge)" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="656" y1="144" x2="706" y2="196" stroke="url(#edge)" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="710" y="60" width="232" height="82" rx="10" fill="#101820" stroke="#2f6f4f"/>
+  <text x="826" y="88" fill="#7ee2a8" font-size="13" text-anchor="middle">mock_ue · mock_viewport</text>
+  <text x="826" y="110" fill="#7d8896" font-size="11" text-anchor="middle">runs anywhere · no engine · no key</text>
+  <text x="826" y="130" fill="#5a6b7d" font-size="10.5" text-anchor="middle">python -m cindra.demo</text>
+
+  <rect x="710" y="164" width="232" height="82" rx="10" fill="#101820" stroke="#7a5a2f"/>
+  <text x="826" y="192" fill="#f0b429" font-size="13" text-anchor="middle">live UE 5.7 editor</text>
+  <text x="826" y="214" fill="#7d8896" font-size="11" text-anchor="middle">remote exec on Windows</text>
+  <text x="826" y="234" fill="#5a6b7d" font-size="10.5" text-anchor="middle">same tool schemas</text>
+
+  <text x="18" y="272" fill="#5a6b7d" font-size="11">swap the transport layer only — tool schemas and agent logic stay identical</text>
+</svg>

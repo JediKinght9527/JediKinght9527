@@ -1,0 +1,42 @@
+name: Generate contribution snake
+
+on:
+  schedule:
+    # 每 6 小时刷新一次贡献格动画
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # SVG 版本比 GIF 快很多，profile README 里用 <picture> 按明暗主题切换
+      - name: Generate contribution snake SVGs
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            output/github-contribution-grid-snake.svg
+            output/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Commit generated SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/github-contribution-grid-snake.svg \
+                  output/github-contribution-grid-snake-dark.svg
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore: refresh contribution snake"
+            git push
+          fi
