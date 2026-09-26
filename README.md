@@ -63,11 +63,18 @@ Natural-language control for Unreal Engine 5.7 — scene editing, PCG procedural
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JediKinght9527/ue5-ai-commander/main/assets/demo_topdown.png" width="300" alt="Top-down PCG density view">
-  <img src="assets/ue5-pipeline.svg" width="600" alt="Agent pipeline: MCP tools → agent loop → mock or live engine">
+  <img src="https://raw.githubusercontent.com/JediKinght9527/ue5-ai-commander/main/assets/demo_topdown.png" width="330" alt="Top-down PCG density view">
+  <br>
+  <sub>top-down view of the same PCG scatter</sub>
 </p>
 
-The mock/live split is the point: the whole pipeline is verified offline on a Mac against a mock, then driven against a live editor on Windows by swapping **only the transport layer** — tool schemas and agent logic stay byte-identical.
+<p align="center">
+  <img src="assets/ue5-pipeline.svg" width="820" alt="Agent pipeline: MCP tools, agent loop with read-back verification, and the mock or live engine transport">
+  <br>
+  <sub>swap the transport layer only — tool schemas and agent logic stay byte-identical</sub>
+</p>
+
+The mock/live split is the point: the whole pipeline is verified offline on a Mac against a mock, then driven against a live editor on Windows — the tool schemas and agent logic never change, only the transport does.
 
 ## Principles
 
