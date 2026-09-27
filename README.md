@@ -55,20 +55,6 @@ Two kinds of tools, one shared rule: **make the system prove it worked.**
 Natural-language control for Unreal Engine 5.7 — scene editing, PCG procedural generation, Blueprints, project-style C++, engine Q&A over RAG, cinematics, lighting, PIE automation, Tripo3D text-to-3D. 43 modules, 45 registered MCP tools, 103 assertions.
 
 <p align="center">
-  <a href="https://github.com/JediKinght9527/ue5-ai-commander">
-    <img src="https://raw.githubusercontent.com/JediKinght9527/ue5-ai-commander/main/assets/demo_view.png" width="820" alt="PCG-generated oak forest rendered in the Unreal Engine viewport">
-  </a>
-  <br>
-  <sub>141 oaks scattered by one PCG pipeline (landscape → sampler → flat-only filter → random transform → spawn) across 200×200 m. Mock backend: no engine, no API key — <code>python -m cindra.demo</code></sub>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JediKinght9527/ue5-ai-commander/main/assets/demo_topdown.png" width="330" alt="Top-down PCG density view">
-  <br>
-  <sub>top-down view of the same PCG scatter</sub>
-</p>
-
-<p align="center">
   <img src="assets/ue5-pipeline.svg" width="820" alt="Agent pipeline: MCP tools, agent loop with read-back verification, and the mock or live engine transport">
   <br>
   <sub>swap the transport layer only — tool schemas and agent logic stay byte-identical</sub>
